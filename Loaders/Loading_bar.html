@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading bar loader</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgb(28, 27, 27);
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+       
+        .loading_bar{
+            width: 500px;
+            height: 24px;
+            border-radius: 20px;
+            background-color: rgb(56,56,56);
+            box-shadow: inset 1px 3px 10px rgb(97, 97, 97),
+            0px 2px 20px rgb(59,59, 59);
+            position: relative;
+            overflow: hidden;
+         
+        }
+
+        .loading_bar::before{
+            content: "";
+            background-color: yellow;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: -500px;
+            border-radius: 20px;
+            animation: 8s loader infinite linear ;
+          
+        }
+        p{
+            color: rgb(255,221,0);
+            font-size: 25px;
+            letter-spacing: 2px;
+        }
+        
+        @keyframes loader {
+            0%{
+               left: -500px;
+            }
+            10%{
+               left: -470px;
+            }
+            20%{
+               left: -420px;
+            }
+            30%{
+               left: -360px;
+            }
+            40%{
+               left: -300px;
+            }
+
+            50%{
+               left: -250px;
+            }
+            60%{
+               left: -210px;
+            }
+            70%{
+               left: -170px;
+            }
+           80%{
+               left: -110px;
+            }
+            90%{
+               left: -50px;
+            }
+            100%{
+               left: 0px;
+            }
+
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="loading_bar"></div>
+        <p>Loading...</p>
+    </div>
+</body>
+</html>
